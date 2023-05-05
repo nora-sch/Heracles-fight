@@ -12,16 +12,22 @@ console.log(`${heracles.getName()} 🧡 ${heracles.getLife()}`);
 console.log(`${lion.getName()} 🖤 ${lion.getLife()}`);
 
 let round = 0;
-while (heracles.getLife() > 0 && lion.getLife() > 0) {
+const interval = setInterval(() => {
   round++;
   console.log(`🕛 round ${round}`);
-  console.log('-'.repeat(40));
-  if (heracles.getLife() > 0) {
+  console.log("-".repeat(40));
+
+  if (heracles.getLife() > 0 && heracles.getLife() > 0) {
     heracles.fight(lion);
-    console.log('-'.repeat(40));
+    console.log("-".repeat(40));
+  } else {
+    clearInterval(interval);
   }
-  if (lion.getLife() > 0) {
+
+  if (lion.getLife() > 0 && heracles.getLife() > 0) {
     lion.fight(heracles);
-    console.log('-'.repeat(40));
+    console.log("-".repeat(40));
+  } else {
+    clearInterval(interval);
   }
-}
+}, 500);

@@ -1,6 +1,6 @@
 /* Fighter class definition */
 
-const MAX_LIFE = 100;
+const MAX_LIFE = 50;
 
 class Fighter {
   #name;
